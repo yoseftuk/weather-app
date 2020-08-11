@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Github Pages
+[CLICK HERE](https://yoseftuk.github.io/weather-app/dist/index.html) to watch it on github pages
+Watch it on github pages
+
 ## Available Scripts
 
 In the project directory, you can run:
