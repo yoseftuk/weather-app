@@ -1,0 +1,34 @@
+@import "../../../scss/index";
+
+#daily {
+  display: flex;
+  width: 100%;
+}
+.daily-item {
+  width: 100%;
+  padding: 4px 4px;
+  border-right: 1px solid $light;
+  &:last-child {
+    border-right: none;
+  }
+  &__day {
+    color: $secondary;
+    width: 100%;
+    text-align: center;
+  }
+  &__temps {
+    display: flex;
+    @include justify(space-around);
+  }
+  &__icon {
+  }
+  &__temp {
+    font-size: 8pt;
+    &.min {
+      color: $secondary;
+    }
+    &.max {
+      color: $dark;
+    }
+  }
+}

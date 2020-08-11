@@ -1,0 +1,73 @@
+@import "../../scss/index";
+
+#map {
+  width: 200px;
+  @include flex-shrink(0);
+  &__wrapper {
+    position: relative;
+    width: 100%;
+  }
+  svg {
+    width: 100%;
+    height: auto;
+    //fill: $map-color;
+    //stroke: darken($map-color, 10%);
+    stroke: $dark;
+    fill: transparent;
+    stroke-width: 2;
+  }
+}
+
+.pin {
+  $w: 6px;
+  $border: 3px;
+  position: absolute;
+  cursor: pointer;
+  width: $w;
+  height: $w;
+  background-color: $pin-color;
+  background-clip: content-box;
+  @include transform(translate(-$w/2-$border, -$w/2-$border) scale(1));
+  @include transition(all.3s ease);
+  @extend %circle;
+  border: $border solid transparentize($pin-color, .5);
+  &.active {
+    background-color: $primary;
+    border-color: transparentize($primary, .5);
+    @include transform(translate(-$w/2-$border, -$w/2-$border) scale(1.2));
+  }
+
+  &__title {
+    opacity: 0;
+    background-color: black;
+    color: white;
+    @include border-radius(4px);
+    font-family: sans-serif;
+    font-size: 8pt;
+    white-space: nowrap;
+    padding: 4px 8px;
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 5px);
+    @include transform(translateX(-50%));
+    @extend %without-events;
+    @include transition(all.3s ease);
+    &:before {
+      $tail-w: 6px;
+      @extend %pseudo;
+      width: $tail-w;
+      height: $tail-w;
+      background-color: black;
+      @include transform(translateX(-50%) rotate(45deg));
+      left: 50%;
+      bottom: -$tail-w/2;
+    }
+  }
+  &:hover {
+    @include transform(translate(-$w/2-$border, -$w/2-$border) scale(1.2));
+    .pin__title {
+      opacity: 1;
+      bottom: calc(100% + 10px);
+    }
+  }
+}

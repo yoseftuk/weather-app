@@ -1,14 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
+import store from './store/store-init';
 import * as serviceWorker from './serviceWorker';
+import StoreContext from "./components/hoc/store-context";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <StoreContext store={store}>
+            <App/>
+        </StoreContext>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

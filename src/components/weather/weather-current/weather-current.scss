@@ -1,0 +1,57 @@
+@import '../../../scss/index';
+
+#general {
+  color: $secondary;
+  &__sync {
+    float: right;
+  }
+  &__city {
+    margin: 0;
+    font-size: 22pt;
+  }
+  &__time {
+    margin: 0;
+    font-size: 15pt;
+    font-weight: normal;
+  }
+  &__weather {
+    margin: 0;
+    font-size: 15pt;
+    font-weight: normal;
+  }
+}
+#current {
+  color: $secondary;
+  display: flex;
+  @include justify(space-between);
+  &__main {
+    @extend %flex-center;
+    position: relative;
+    right: 1.7em;
+  }
+  &__sec {
+
+  }
+  &__temp {
+    font-size: 50pt;
+    color: $dark;
+    font-weight: lighter;
+  }
+  &__units {
+    align-self: flex-start;
+    color: $light;
+  }
+}
+.current {
+  &__unit {
+    cursor: pointer;
+    @include transition(color .2s ease);
+    will-change: color;
+    &.active {
+      color: $dark;
+    }
+    &:hover {
+      color: $primary;
+    }
+  }
+}
