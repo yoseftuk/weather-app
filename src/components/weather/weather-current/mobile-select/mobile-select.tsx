@@ -23,7 +23,7 @@ export default function MobileSelect() {
             <div id={'select__wrapper'} className={classes({open: isOpen})}>
                 <ul id={'select__options'}>
                     {cities.sort((a, b) => a.name > b.name ? 1 : -1).map(city => (
-                        <li className={classes({select__option: true, active: city.name === currentCity.name})} onClick={() => chooseCity(city)}>{city.name}</li>
+                        <li key={city.name} className={classes({select__option: true, active: city.name === currentCity.name})} onClick={() => chooseCity(city)}>{city.name}</li>
                     ))}
                 </ul>
             </div>

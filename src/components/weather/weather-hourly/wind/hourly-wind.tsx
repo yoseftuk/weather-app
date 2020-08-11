@@ -14,7 +14,7 @@ export default function HourlyWind() {
         <div id={'hourly__wind'}>
             {
                 takeSample<HourData>(data, 3, 8).map((t, i) => (
-                    <HourlyWindItem data={t}/>
+                    <HourlyWindItem key={t.dt} data={t}/>
                 ))
             }
         </div>

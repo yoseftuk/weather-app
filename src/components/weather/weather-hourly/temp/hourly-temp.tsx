@@ -71,7 +71,7 @@ export default function HourlyTemp() {
             <div id={'hourly__temp__hours'}>
                 {
                     takeSample<HourData>(data, 3, 9).map((t, i) => (
-                        <span className={'hourly__temp__hour'}>{formatHour(t.dt)}</span>
+                        <span key={t.dt} className={'hourly__temp__hour'}>{formatHour(t.dt)}</span>
                     ))
                 }
             </div>
