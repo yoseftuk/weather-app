@@ -12,12 +12,12 @@ export function* sagaWatcher() {
 
 function* sagaWorker(action: Action) {
     const city = action.payload;
+    localStorage.setItem('city', JSON.stringify(city));
     console.log(`fetching for ${city.name}`);
     yield put({type: START_LOADING});
     yield put({type: SET_CITY, payload: city});
     try {
         const data = yield call(() => fetchWeather(action.payload));
-        console.log(data);
         yield put({type: STOP_LOADING});
         yield put({type: SET_ERROR, payload: null});
         yield put({type: SET_DATA, payload: data});
