@@ -37,7 +37,7 @@ export default function HourlyTemp() {
         ctx.lineWidth = 2;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'bottom';
-
+        ctx.clearRect(0, 0, cv.width, cv.height);
         // fill
         ctx.beginPath();
         ctx.moveTo(0, cv.height);
@@ -63,7 +63,7 @@ export default function HourlyTemp() {
             ctx.fillText(String(displayTemp(d.temp, isFahrenheit)), getX(i*2 + 1), getY(d) - 3);
         }
         ctx.closePath();
-    }, [data, wSize]);
+    }, [data, wSize, isFahrenheit]);
     if(!data) return null;
     return (
         <div id={'hourly__temp'}>

@@ -3,7 +3,7 @@ import './loader.scss';
 
 export default function Loader({msg}: {msg: string}) {
     return (
-        <div style={{position: 'relative', width: '100%'}}>
+        <div className={'preloader__wrapper'}>
             <div className="preloader">
                 <svg version="1.1"
                      id="sun"

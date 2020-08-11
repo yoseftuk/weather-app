@@ -24,13 +24,21 @@
   color: $secondary;
   display: flex;
   @include justify(space-between);
+  @include mobile() {
+    display: block;
+  }
   &__main {
     @extend %flex-center;
     position: relative;
     right: 1.7em;
   }
   &__sec {
-
+    @include mobile() {
+      display: flex;
+      @include justify(space-between);
+      font-size: 10pt;
+      margin-bottom: 20px;
+    }
   }
   &__temp {
     font-size: 50pt;

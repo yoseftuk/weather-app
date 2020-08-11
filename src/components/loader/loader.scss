@@ -1,4 +1,15 @@
+@import "../../scss/index";
 .preloader {
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    @include mobile() {
+      position: fixed;
+      width: 0;
+      top: 50%;
+      left: 50%;
+    }
+  }
   position: absolute;
   margin-left: -55px;
   margin-top: -100px;

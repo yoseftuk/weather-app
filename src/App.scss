@@ -6,4 +6,8 @@
   padding: 20px;
   border: 1px solid $light;
   @include border-radius(8px);
+  @include mobile() {
+    border: none;
+    margin: 0 auto;
+  }
 }

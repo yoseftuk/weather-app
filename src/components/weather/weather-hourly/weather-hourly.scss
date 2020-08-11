@@ -8,6 +8,7 @@
     clear: both;
     display: flex;
     padding: 20px 0;
+    overflow: auto;
   }
   &__temp {
     clear: both;
@@ -50,11 +51,17 @@
     }
   }
   &__wind {
+
     &__item {
       width: 100%;
       padding: 4px 4px;
       text-align: center;
 
+      &__unit {
+        @include mobile(){
+          display: none;
+        }
+      }
       &__val {
         font-size: 9pt;
       }
