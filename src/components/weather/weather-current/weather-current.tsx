@@ -23,9 +23,6 @@ export default function WeatherCurrent() {
     return (
         <div>
             <div id={'general'}>
-                <span id={'general__sync'}>
-                <Sync/>
-                </span>
                 <h1 id={'general__city'}>{city.name}</h1>
                 <MobileSelect/>
                 <h2 id={'general__time'}>{israelTime(timezoneOffset || 0)}</h2>
