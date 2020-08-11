@@ -2,7 +2,7 @@ import React, {useEffect, useRef} from 'react';
 import HourData from "../../../../types/hour-data";
 import {useSelector} from "react-redux";
 import ApiStore from "../../../../types/api-store";
-import {useWindowResize} from "../../../hooks/resize.hook";
+import {useWindowResize} from "../../../../hooks/resize.hook";
 import {takeSample} from "../../../../pipes/take-sample";
 import HourlyWindItem from "../wind/hourly-wind-item";
 import {formatHour} from "../../../../pipes/format-hour";

@@ -11,6 +11,7 @@ import {KMPerHour} from "../../../pipes/convert-speed";
 import {classes} from "../../../pipes/class";
 import {SET_FAHRENHEIT} from "../../../store/actions";
 import Sync from "./sync";
+import MobileSelect from "./mobile-select/mobile-select";
 
 export default function WeatherCurrent() {
     const timezoneOffset = useSelector((state: ApiStore) => state.data && state.data.timezone_offset);
@@ -26,6 +27,7 @@ export default function WeatherCurrent() {
                 <Sync/>
                 </span>
                 <h1 id={'general__city'}>{city.name}</h1>
+                <MobileSelect/>
                 <h2 id={'general__time'}>{israelTime(timezoneOffset || 0)}</h2>
                 <h2 id={'general__weather'}>{data.weather[0].description}</h2>
             </div>

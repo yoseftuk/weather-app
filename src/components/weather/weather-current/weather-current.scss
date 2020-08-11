@@ -8,6 +8,9 @@
   &__city {
     margin: 0;
     font-size: 22pt;
+    @include mobile() {
+      display: none;
+    }
   }
   &__time {
     margin: 0;

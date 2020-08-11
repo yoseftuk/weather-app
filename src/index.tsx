@@ -4,7 +4,7 @@ import './index.scss';
 import App from './App';
 import store from './store/store-init';
 import * as serviceWorker from './serviceWorker';
-import StoreContext from "./components/hoc/store-context";
+import StoreContext from "./hoc/store-context";
 
 ReactDOM.render(
     <React.StrictMode>

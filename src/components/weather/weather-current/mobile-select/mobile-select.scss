@@ -1,0 +1,60 @@
+@import "../../../../scss/index";
+
+#select {
+  &__title {
+    margin: 0;
+    font-size: 22pt;
+    display: none;
+    cursor: pointer;
+    @extend %no-select;
+    @include mobile() {
+      display: block;
+    }
+  }
+  &__wrapper {
+    opacity: 0;
+    @include transform(translateY(-40px));
+    @include transition(all .2s ease);
+    display: none;
+    @extend %match-parent;
+    position: fixed;
+    @extend %border-box;
+    margin: 0;
+    padding: 40px;
+    background-color: #00000088;
+    z-index: 1000;
+    &.open {
+      display: block;
+      opacity: 1;
+      @include transform(translateY(0));
+    }
+  }
+  &__options {
+    list-style: none;
+    background-color: white;
+    display: block;
+    max-height: 100%;
+    padding: 0;
+    margin: 0;
+    @include border-radius(8px);
+    overflow: auto;
+  }
+}
+.select {
+  &__option {
+    color: $dark;
+    padding: 10px 20px;
+    font-size: 14pt;
+    border-bottom: 1px solid $light;
+    &.active, &:active {
+      background-color: $primary-light;
+    }
+    &:first-child {
+      @include border-radius(8px 8px 0 0);
+    }
+    &:last-child {
+      @include border-radius(0 0 8px 8px);
+      border-bottom: none;
+    }
+  }
+}
