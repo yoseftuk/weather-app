@@ -11,4 +11,5 @@ export const cities: ICity[] = [
     {name: "Askelon", lat: 31.6688, lon: 34.5743, left: 19.5, top: 45.2},
     {name: "Mitzpe Ramon", lat: 30.6102, lon: 34.8019, left: 36, top: 71},
     {name: "Nahariya", lat: 33.0085, lon: 35.0981, left: 52, top: 11},
+    {name: "Netanya", lat: 32.3215, lon: 34.8532, left: 38, top: 28},
 ];

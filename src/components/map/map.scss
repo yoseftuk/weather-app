@@ -66,6 +66,7 @@
     }
   }
   &:hover {
+    z-index: 1;
     @include transform(translate(-$w/2-$border, -$w/2-$border) scale(1.2));
     .pin__title {
       opacity: 1;

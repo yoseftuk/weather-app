@@ -20,10 +20,12 @@ export default function MobileSelect() {
     return (
         <>
             <h1 id={'select__title'} onClick={() => setIsOpen(true)}>{currentCity.name}&nbsp;&#9662;</h1>
-            <div id={'select__wrapper'} className={classes({open: isOpen})}>
+            <div id={'select__wrapper'} className={classes({open: isOpen})} onClick={() => setIsOpen(false)}>
                 <ul id={'select__options'}>
                     {cities.sort((a, b) => a.name > b.name ? 1 : -1).map(city => (
-                        <li key={city.name} className={classes({select__option: true, active: city.name === currentCity.name})} onClick={() => chooseCity(city)}>{city.name}</li>
+                        <li key={city.name}
+                            className={classes({select__option: true, active: city.name === currentCity.name})}
+                            onClick={() => chooseCity(city)}>{city.name}</li>
                     ))}
                 </ul>
             </div>
